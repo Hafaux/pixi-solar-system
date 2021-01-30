@@ -11,10 +11,11 @@ export default class Rocket extends Container {
     super();
 
     this.name = 'rocket';
+    
+    this.pivot.set(-350, -1);
 
-    this._rocket = new Sprite.from('rocket');
-    this._rocket.pivot.set(-350, 0);
-    this.addChild(this._rocket);
+    this._body = new Sprite.from('rocket');
+    this.addChild(this._body);
 
     // Can't get this to work
     // this._fire = new Fire();
@@ -23,7 +24,7 @@ export default class Rocket extends Container {
   }
 
   rotateRocket() {
-    gsap.to(this._rocket, { rotation: -Math.PI * 2, duration: 5, repeat: -1, ease: 'linear' });
+    gsap.to(this, { rotation: -Math.PI * 2, duration: 5, repeat: -1, ease: 'linear' });
     // this._rocket.rotation = 2;
   }
 }
