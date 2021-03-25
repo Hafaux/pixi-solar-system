@@ -31,7 +31,6 @@ export default class Play extends Scene {
     footer.y = window.innerHeight / 2 - footer.height;
     this.addChild(footer);
 
-    // Honestly I have no idea how do this part
     const viewport = this.parent.parent;
     const filter = new filters.DisplacementFilter(sun._blast);
     viewport.filters = [filter];
